@@ -157,7 +157,7 @@ minvalue 1;
 CREATE TABLE IF NOT EXISTS Jornadas(
 	idJornada INT NOT NULL DEFAULT NEXTVAL('Jornada_seq'),
 	temporadaFK INT NOT NULL,
-	ligaFK INT NOT NULL
+	ligaFK INT NOT NULL,
 	descripcion VARCHAR(45) NULL DEFAULT NULL,
 	PRIMARY KEY(idJornada)
 );
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS Partidos(
 CREATE SEQUENCE Resultado_seq
 start with 1
 increment by 1
-maxvaule 99999
+maxvalue 99999
 minvalue 1;
 
 CREATE TABLE IF NOT EXISTS Resultado(
@@ -235,7 +235,7 @@ ALTER TABLE Partidos ADD CONSTRAINT cPartidosFK FOREIGN KEY(EquipoLocal) REFEREN
 ALTER TABLE Partidos ADD CONSTRAINT cvPartidosFK FOREIGN KEY(EquipoVisitante) REFERENCES Equipos(idEquipos);
 
 /*Relacion de las tablas Resultado con Partidos*/
-ALTER TABLE Resultado ADD CONSTRAINT cResultadoFK FOREIGN KEY(partidosFK) REFERENCES Partidos(idPartidos);
+ALTER TABLE Resultado ADD CONSTRAINT cResultadoFK FOREIGN KEY(partidoFK) REFERENCES Partidos(idPartidos);
 
 
 
