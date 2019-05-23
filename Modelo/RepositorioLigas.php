@@ -26,11 +26,35 @@ class RepositorioLigas{
 
     public static function obtener_todos($conexion){
         try{
-            $sql = "SELECT * FROM V_Ligas";
+            $sql = "SELECT * FROM v_resultados";
             $sentencia = $conexion->prepare($sql);
 			$sentencia ->execute();
 			$resultado = $sentencia ->fetchAll(PDO::FETCH_ASSOC);
         }catch(PDOException $ex){
+            print 'Error'. $ex->getMessage().'<br>';
+        }
+        return $resultado;
+    }
+
+    public static function obtener_ligas($conexion){
+        try {
+            $sql = "SELECT * FROM V_Ligas";
+            $sentencia = $conexion->prepare($sql);
+			$sentencia ->execute();
+			$resultado = $sentencia ->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $ex) {
+            print 'Error'. $ex->getMessage().'<br>';
+        }
+        return $resultado;
+    }
+
+    public static function obtener_calendario($conexion){
+        try {
+            $sql = "SELECT * FROM calendario";
+            $sentencia = $conexion->prepare($sql);
+			$sentencia ->execute();
+			$resultado = $sentencia ->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $ex) {
             print 'Error'. $ex->getMessage().'<br>';
         }
         return $resultado;

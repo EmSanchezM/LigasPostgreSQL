@@ -1,11 +1,12 @@
 <?php
 class Conexion{
   private static $conexion;
+  
   public static function abrirConexion(){
     if(!isset(self::$conexion)){
       try {
         $usuario = 'postgres';
-        $contraseña = 'post1234';
+        $contraseña = 'post';
         $charset = 'utf8';
         $dsn = 'pgsql:host=localhost;port=5432;dbname=sistemaLigas';
         self::$conexion = new PDO($dsn,$usuario,$contraseña);

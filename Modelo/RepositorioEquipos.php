@@ -38,6 +38,18 @@ class RepositorioEquipos{
         return $resultado;
     }
 
+    public static function obtener_temporadas($conexion){
+        try {
+            $sql = "SELECT * FROM Temporadas";
+            $sentencia = $conexion ->prepare($sql);
+            $sentencia ->execute();
+            $resultado = $sentencia ->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $ex) {
+            print 'Error'. $ex->getMessage().'<br>';
+        }
+        return $resultado;
+    }
+
 
 
 

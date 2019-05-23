@@ -43,6 +43,12 @@ $equipos = RepositorioEquipos::obtener_todos($conexion);
                     <a class="nav-link " href="vistaArbitros.php">Info de Arbitros</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " href="frmCalendario.php">Calendario de Resultados de Partidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="simulacionCalendario.php">Calendario de Partidos</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link " href="vistaResultados.php">Info de Resultados</a>
                 </li>
               </ul>

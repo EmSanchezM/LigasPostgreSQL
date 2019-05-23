@@ -138,7 +138,7 @@
   <!-- FOOTER -->
      <footer class="container">
         <p class="float-right"><a href="../index.php">Regresar al inicio</a></p>
-        <p>&copy; Implementación de Vistas en PostgreSQL. &middot; <a href="#">Elvin Sánchez</a> &middot; <a href="#">IS</a></p>
+        <p>&copy; Implementación en PostgreSQL. &middot; <a href="#"></a> &middot; <a href="#">IS</a></p>
       </footer>
     </main>
 

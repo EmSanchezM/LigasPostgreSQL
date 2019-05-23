@@ -1,10 +1,10 @@
 <?php
 include_once '../Modelo/Conexion.php';
-include_once '../Modelo/RepositorioGoles.php';
+include_once '../Modelo/RepositorioLigas.php';
 
 Conexion::abrirConexion();
 $conexion = Conexion::obtenerConexion();
-$goles = RepositorioGoles::obtener_todos($conexion);
+$resultados = RepositorioLigas::obtener_calendario($conexion);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,9 +43,6 @@ $goles = RepositorioGoles::obtener_todos($conexion);
                   <a class="nav-link " href="vistaArbitros.php">Info de Arbitros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="frmCalendario.php">Calendario de Resultados de Partidos</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link " href="simulacionCalendario.php">Calendario de Partidos</a>
                 </li>
                 <li class="nav-item">
@@ -55,38 +52,46 @@ $goles = RepositorioGoles::obtener_todos($conexion);
             </div>
           </nav>
         </header>
-    <h2>Información de los Goleadores</h2>
+    <br>    
+    <br> 
+    <br>
+    <br>   
+    <h2>Simulación de Calendario</h2>
 <br>
-<br>
-
 <div class="table-responsive-sm">
     <div class="col-md-8">
       <table style="text-aling: center;" id="datatable" class="table table-hover">
         <thead style="background-color: #dc3545; color: white; font-weight:bold;">
           <tr>
             <td>No</td>
-            <td>Nombre del Jugador</td>
-            <td>Posicion</td>
-            <td>Numero de Goles</td>
+            <td>Fecha del Partido</td>
+            <td>Equipo Local</td>
+            <td>Equipo Visitante</td>
+            <td>Resultado</td>
+            <td>Estadio</td>
           </tr>
         </thead>
             <tfoot style="background-color: #ccc; color: white; font-weight:bold;">
               <tr>
                 <td>No</td>
-                <td>Nombre del Jugador</td>
-                <td>Posicion</td>
-                <td>Numero de Goles</td>
+                <td>Fecha del Partido</td>
+                <td>Equipo Local</td>
+                <td>Equipo Visitante</td>
+                <td>Resultado</td>
+                <td>Estadio</td>
               </tr>
             </tfoot>
       <tbody>
       <?php
-        foreach($goles as $row){
+        foreach($resultados as $row){
       ?>
         <tr>
-          <td><?php echo $row['idgoles'] ?></td>
-          <td><?php echo $row['nombrejugador'] ?></td>
-          <td><?php echo $row['tipojugador'] ?></td>
-          <td><?php echo $row['numerogoles'] ?></td>
+          <td><?php echo $row['idpartidos'] ?></td>
+          <td><?php echo $row['fechapartido'] ?></td>
+          <td><?php echo $row['equipolocal'] ?></td>
+          <td><?php echo $row['equipovisitante'] ?></td>
+          <td><?php echo $row['resultado']?></td>
+          <td><?php echo $row['nombre'] ?></td>
         </tr>
       <?php  } ?>
     </tbody>
@@ -95,7 +100,8 @@ $goles = RepositorioGoles::obtener_todos($conexion);
   </div>
   </div>
 
-  <footer class="container">
+     <!-- FOOTER -->
+     <footer class="container">
         <p class="float-right"><a href="../index.php">Regresar al inicio</a></p>
         <p>&copy; Implementación en PostgreSQL. &middot; <a href="#"></a> &middot; <a href="#"></a></p>
       </footer>

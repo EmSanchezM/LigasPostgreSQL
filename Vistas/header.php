@@ -41,6 +41,12 @@
                 <li class="nav-item">
                   <a class="nav-link " href="Vistas/vistaResultados.php">Info de Resultados</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="Vistas/frmCalendario.php">Calendario de Resultados de Partidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="Vistas/simulacionCalendario.php">Calendario de Partidos</a>
+                </li>
               </ul>
             </div>
           </nav>

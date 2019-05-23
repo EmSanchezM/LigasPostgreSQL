@@ -43,6 +43,12 @@ $resultados = RepositorioGoles::obtener_resultados($conexion);
                   <a class="nav-link " href="vistaArbitros.php">Info de Arbitros</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " href="frmCalendario.php">Calendario de Resultados de Partidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="simulacionCalendario.php">Calendario de Partidos</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link " href="vistaResultados.php">Info de Resultados</a>
                 </li>
               </ul>
@@ -97,7 +103,7 @@ $resultados = RepositorioGoles::obtener_resultados($conexion);
      <!-- FOOTER -->
      <footer class="container">
         <p class="float-right"><a href="../index.php">Regresar al inicio</a></p>
-        <p>&copy; Implementación de Vistas en PostgreSQL. &middot; <a href="#">Elvin Sánchez</a> &middot; <a href="#">Elvin Sánchez</a></p>
+        <p>&copy; Implementación en PostgreSQL. &middot; <a href="#"></a> &middot; <a href="#"></a></p>
       </footer>
     </main>
 

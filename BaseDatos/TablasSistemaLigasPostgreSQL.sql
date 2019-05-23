@@ -1,3 +1,29 @@
+DROP TABLE Estadio CASCADE;
+DROP SEQUENCE Estadio_seq;
+DROP TABLE Arbitros CASCADE;
+DROP SEQUENCE Arbitros_seq;
+DROP TABLE TiposEquipo CASCADE;
+DROP SEQUENCE TiposEquipo_seq;
+DROP TABLE TipoJugador CASCADE;
+DROP SEQUENCE TipoJugador_seq;
+DROP TABLE Equipos CASCADE;
+DROP SEQUENCE Equipos_seq;
+DROP TABLE Jugadores CASCADE;
+DROP SEQUENCE Jugadores_seq;
+DROP TABLE tecnicos CASCADE;
+DROP SEQUENCE tecnicos_seq;
+DROP TABLE Liga CASCADE;
+DROP SEQUENCE Liga_seq;
+DROP TABLE Goles CASCADE;
+DROP SEQUENCE Goles_seq;
+DROP TABLE Temporadas CASCADE;
+DROP SEQUENCE Temporada_seq;
+DROP TABLE Jornadas CASCADE;
+DROP SEQUENCE Jornada_seq;
+DROP TABLE Partidos CASCADE;
+DROP SEQUENCE Partido_seq;
+DROP TABLE Resultado CASCADE;
+DROP SEQUENCE Resultado_seq;
 
 /*Creacion de la secuencia para que el id sea autoincrementable*/
 CREATE SEQUENCE Estadio_seq
@@ -14,13 +40,13 @@ CREATE TABLE IF NOT EXISTS Estadio(
 );
 
 /*Creacion de la secuencia para que el id sea autoincrementable*/
-CREATE SEQUENCE ARBITROS_seq
+CREATE SEQUENCE Arbitros_seq
 start with 1
   increment by 1
   maxvalue 99999
   minvalue 1;
 
-CREATE TABLE IF NOT EXISTS ARBITROS(
+CREATE TABLE IF NOT EXISTS Arbitros(
 	idArbitro INT NOT NULL UNIQUE DEFAULT NEXTVAL ('ARBITROS_seq'),
 	experiencia VARCHAR(45),
 	edad INT,
@@ -55,13 +81,13 @@ CREATE TABLE IF NOT EXISTS TipoJugador(
  );
 
 /*Creacion de la secuencia para que el id sea autoincrementable*/
-CREATE SEQUENCE EQUIPOS_seq
+CREATE SEQUENCE Equipos_seq
 start with 1
   increment by 1
   maxvalue 99999
   minvalue 1;
 
-CREATE TABLE IF NOT EXISTS EQUIPOS(
+CREATE TABLE IF NOT EXISTS Equipos(
 	idEquipos INT NOT NULL UNIQUE DEFAULT NEXTVAL ('EQUIPOS_seq'),
 	nombre VARCHAR(45),
 	fechaFundacion DATE,
@@ -193,7 +219,7 @@ CREATE TABLE IF NOT EXISTS Resultado(
 );
 
 /*Relacion de las tablas EQUIPOS CON ESTADIO*/ 
-ALTER TABLE EQUIPOS ADD CONSTRAINT estadioFK FOREIGN KEY(estadio) REFERENCES Estadio(idEstadio);
+ALTER TABLE Equipos ADD CONSTRAINT estadioFK FOREIGN KEY(estadio) REFERENCES Estadio(idEstadio);
 
 /*Relacion de la tabla Jugadores con Equipos*/
 ALTER TABLE Jugadores ADD CONSTRAINT equiposFK FOREIGN KEY(idEquiposFK) REFERENCES EQUIPOS(idEquipos);
